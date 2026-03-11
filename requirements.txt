@@ -1,16 +1,18 @@
-langchain 
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+langchain
 langchain_community
 langchain-qdrant
 langchain_groq
 langchain_huggingface
-langgraph  
-fastapi 
+langgraph
+fastapi
 streamlit
 uvicorn
-tavily-python 
-beautifulsoup4 
+tavily-python
+beautifulsoup4
 requests
-torch --index-url https://download.pytorch.org/whl/cpu
+torch==2.2.2+cpu
 sentence-transformers
 qdrant-client
 python-dotenv
