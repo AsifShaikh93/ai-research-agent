@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: agent
-        image: asif1993/ai-research-agent:v5
+        image: asif1993/ai-research-agent:v6
         env:
         - name: GROQ_API_KEY
           valueFrom:
