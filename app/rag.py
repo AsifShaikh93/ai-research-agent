@@ -1,10 +1,10 @@
 from langchain_qdrant import QdrantVectorStore
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from qdrant_client import QdrantClient
 from qdrant_client.models import VectorParams, Distance
 import os
 
-
+os.environ['HF_TOKEN']=os.getenv('HF_TOKEN')
 
 embeddings = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2"
@@ -17,11 +17,10 @@ client.create_collection(
     vectors_config=VectorParams(size=384, distance=Distance.COSINE),
 )
 
-# create vector store properly
 vectorstore = QdrantVectorStore(
     client=client,
     collection_name="research_docs",
-    embedding=embeddings # Note: 'embedding' (singular) in this class
+    embedding=embeddings 
 )
 
 from langchain_text_splitters import RecursiveCharacterTextSplitter

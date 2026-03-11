@@ -7,8 +7,16 @@ from app.scraper import scrape_url
 from app.models import AgentState
 import os
 
+groq_api_key = os.getenv("GROQ_API_KEY")
 
-llm=ChatGroq(model="llama-3.1-8b-instant")
+
+if not groq_api_key:
+    raise ValueError("GROQ_API_KEY is not set in the environment variables")
+
+llm = ChatGroq(
+    model="llama-3.1-8b-instant",
+    groq_api_key=groq_api_key
+)
 
 
 def search_node(state: AgentState):
