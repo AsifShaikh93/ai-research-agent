@@ -23,7 +23,7 @@ def search_node(state: AgentState):
 
     urls = search_web(state["query"])
 
-    return {"urls": urls}
+    return {"urls": urls,"sources": urls}
 
 
 def scrape_node(state: AgentState):

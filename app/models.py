@@ -6,3 +6,4 @@ class AgentState(TypedDict):
     documents: Optional[List[str]]
     context: Optional[str]
     report: Optional[str]
+    sources: Optional[List[str]]

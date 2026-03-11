@@ -18,5 +18,6 @@ def research(request: QueryRequest):
 
     return {
         "query": request.query,
-        "report": result["report"]
+        "report": result["report"],
+        "sources": result["sources"]
     }
