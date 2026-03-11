@@ -12,6 +12,7 @@ uvicorn
 tavily-python
 beautifulsoup4
 requests
+numpy<2
 torch==2.2.2+cpu
 sentence-transformers
 qdrant-client
