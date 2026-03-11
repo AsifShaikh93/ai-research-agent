@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: streamlit
-        image: asif1993/streamlit_app:v1
+        image: asif1993/streamlit_app:v2
         ports:
         - containerPort: 8501
