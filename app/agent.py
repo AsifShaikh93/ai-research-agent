@@ -22,8 +22,9 @@ llm = ChatGroq(
 def search_node(state: AgentState):
 
     urls = search_web(state["query"])
+    state['sources']=urls
 
-    return {"urls": urls,"sources": urls}
+    return {"urls": urls, state['sources']}
 
 
 def scrape_node(state: AgentState):
