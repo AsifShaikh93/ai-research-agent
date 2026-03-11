@@ -2,7 +2,7 @@ FROM python:3.10
 
 WORKDIR /app
 
-COPY frontend/streamlit_app.py .
+COPY streamlit_app.py .
 
 RUN pip install streamlit requests
 
