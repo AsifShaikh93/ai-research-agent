@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-research-agent
+  namespace: ai-agent-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ai-agent
+  template:
+    metadata:
+      labels:
+        app: ai-agent
+    spec:
+      containers:
+      - name: agent
+        image: asif1993/ai-research-agent:v1
+        ports:
+        - containerPort: 8000
