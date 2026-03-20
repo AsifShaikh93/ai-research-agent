@@ -1,6 +1,7 @@
 from langchain_qdrant import QdrantVectorStore
 from langchain_huggingface import HuggingFaceEmbeddings
 from qdrant_client import QdrantClient
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from qdrant_client.models import VectorParams, Distance
 import os
 
@@ -22,8 +23,6 @@ vectorstore = QdrantVectorStore(
     collection_name="research_docs",
     embedding=embeddings 
 )
-
-from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 def add_documents(docs):
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
