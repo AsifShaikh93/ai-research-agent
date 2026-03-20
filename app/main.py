@@ -4,10 +4,8 @@ from app.agent import research_agent
 
 app = FastAPI(title="AI Research Agent")
 
-
 class QueryRequest(BaseModel):
     query: str
-
 
 @app.post("/research")
 def research(request: QueryRequest):
